@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Buttons Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .radio-group {
+            margin-bottom: 20px;
+        }
+        .radio-group label {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose Your Favorite Fruit</h1>
+    <form id="radioForm">
+        <div class="radio-group">
+            <input type="radio" id="apple" name="fruit" value="Apple">
+            <label for="apple">Apple</label>
+
+            <input type="radio" id="banana" name="fruit" value="Banana">
+            <label for="banana">Banana</label>
+
+            <input type="radio" id="orange" name="fruit" value="Orange">
+            <label for="orange">Orange</label>
+
+            <input type="radio" id="grape" name="fruit" value="Grape">
+            <label for="grape">Grape</label>
+        </div>
+        <button type="button" onclick="showSelected()">Submit</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function showSelected() {
+            const selected = document.querySelector('input[name="fruit"]:checked');
+            if (selected) {
+                document.getElementById('result').textContent = `You selected: ${selected.value}`;
+            } else {
+                document.getElementById('result').textContent = 'Please select a fruit.';
+            }
+        }
+    </script>
+</body>
+</html>
